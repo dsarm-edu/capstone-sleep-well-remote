@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50104CBB2A742EAB006D571B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBA2A742EAB006D571B /* BackButton.swift */; };
+		50104CBD2A743F3F006D571B /* EntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBC2A743F3F006D571B /* EntryRow.swift */; };
+		50104CBF2A744184006D571B /* SleepEntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBE2A744184006D571B /* SleepEntriesView.swift */; };
+		50104CC12A746778006D571B /* SleepListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CC02A746778006D571B /* SleepListHeader.swift */; };
+		50104CC32A74749F006D571B /* EntryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CC22A74749F006D571B /* EntryFormView.swift */; };
+		50104CC52A747B4B006D571B /* SleepTimeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CC42A747B4B006D571B /* SleepTimeCalculation.swift */; };
+		503BC5D02A73106C002D8C33 /* NewEntryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5CF2A73106C002D8C33 /* NewEntryForm.swift */; };
+		503BC5D22A731F21002D8C33 /* TimeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5D12A731F21002D8C33 /* TimeQuery.swift */; };
+		503BC5D42A732577002D8C33 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5D32A732577002D8C33 /* HomeHeader.swift */; };
+		503BC5D62A735FFB002D8C33 /* SleepTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5D52A735FFB002D8C33 /* SleepTimesView.swift */; };
+		503BC5D82A736171002D8C33 /* SleepTimeComp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5D72A736171002D8C33 /* SleepTimeComp.swift */; };
 		5075506A2A7089C100C1BB9D /* capstone_sleep_wellApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507550692A7089C100C1BB9D /* capstone_sleep_wellApp.swift */; };
 		5075506C2A7089C100C1BB9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075506B2A7089C100C1BB9D /* ContentView.swift */; };
 		5075506E2A7089C400C1BB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5075506D2A7089C400C1BB9D /* Assets.xcassets */; };
@@ -14,6 +25,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50104CBA2A742EAB006D571B /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		50104CBC2A743F3F006D571B /* EntryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRow.swift; sourceTree = "<group>"; };
+		50104CBE2A744184006D571B /* SleepEntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepEntriesView.swift; sourceTree = "<group>"; };
+		50104CC02A746778006D571B /* SleepListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepListHeader.swift; sourceTree = "<group>"; };
+		50104CC22A74749F006D571B /* EntryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFormView.swift; sourceTree = "<group>"; };
+		50104CC42A747B4B006D571B /* SleepTimeCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimeCalculation.swift; sourceTree = "<group>"; };
+		503BC5CF2A73106C002D8C33 /* NewEntryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryForm.swift; sourceTree = "<group>"; };
+		503BC5D12A731F21002D8C33 /* TimeQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeQuery.swift; sourceTree = "<group>"; };
+		503BC5D32A732577002D8C33 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
+		503BC5D52A735FFB002D8C33 /* SleepTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimesView.swift; sourceTree = "<group>"; };
+		503BC5D72A736171002D8C33 /* SleepTimeComp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimeComp.swift; sourceTree = "<group>"; };
 		507550662A7089C100C1BB9D /* capstone-sleep-well.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "capstone-sleep-well.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		507550692A7089C100C1BB9D /* capstone_sleep_wellApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = capstone_sleep_wellApp.swift; sourceTree = "<group>"; };
 		5075506B2A7089C100C1BB9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +54,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		503BC5CA2A730562002D8C33 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				503BC5D72A736171002D8C33 /* SleepTimeComp.swift */,
+				503BC5CF2A73106C002D8C33 /* NewEntryForm.swift */,
+				503BC5D12A731F21002D8C33 /* TimeQuery.swift */,
+				503BC5D32A732577002D8C33 /* HomeHeader.swift */,
+				50104CC02A746778006D571B /* SleepListHeader.swift */,
+				50104CBA2A742EAB006D571B /* BackButton.swift */,
+				50104CBC2A743F3F006D571B /* EntryRow.swift */,
+				50104CC42A747B4B006D571B /* SleepTimeCalculation.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		5075505D2A7089C100C1BB9D = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +88,12 @@
 		507550682A7089C100C1BB9D /* capstone-sleep-well */ = {
 			isa = PBXGroup;
 			children = (
+				503BC5CA2A730562002D8C33 /* Components */,
 				507550692A7089C100C1BB9D /* capstone_sleep_wellApp.swift */,
 				5075506B2A7089C100C1BB9D /* ContentView.swift */,
+				503BC5D52A735FFB002D8C33 /* SleepTimesView.swift */,
+				50104CBE2A744184006D571B /* SleepEntriesView.swift */,
+				50104CC22A74749F006D571B /* EntryFormView.swift */,
 				5075506D2A7089C400C1BB9D /* Assets.xcassets */,
 				5075506F2A7089C400C1BB9D /* Preview Content */,
 			);
@@ -137,8 +178,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503BC5D62A735FFB002D8C33 /* SleepTimesView.swift in Sources */,
+				50104CC52A747B4B006D571B /* SleepTimeCalculation.swift in Sources */,
 				5075506C2A7089C100C1BB9D /* ContentView.swift in Sources */,
+				50104CBF2A744184006D571B /* SleepEntriesView.swift in Sources */,
+				50104CBB2A742EAB006D571B /* BackButton.swift in Sources */,
+				503BC5D02A73106C002D8C33 /* NewEntryForm.swift in Sources */,
+				503BC5D82A736171002D8C33 /* SleepTimeComp.swift in Sources */,
+				503BC5D42A732577002D8C33 /* HomeHeader.swift in Sources */,
+				50104CC32A74749F006D571B /* EntryFormView.swift in Sources */,
+				50104CC12A746778006D571B /* SleepListHeader.swift in Sources */,
 				5075506A2A7089C100C1BB9D /* capstone_sleep_wellApp.swift in Sources */,
+				503BC5D22A731F21002D8C33 /* TimeQuery.swift in Sources */,
+				50104CBD2A743F3F006D571B /* EntryRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,35 +1,35 @@
 //
-//  ContentView.swift
+//  WakeTimesView.swift
 //  capstone-sleep-well
 //
-//  Created by Danica Sarmiento on 7/25/23.
+//  Created by Danica Sarmiento on 7/27/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct SleepTimesView: View {
     var body: some View {
-        
         ZStack {
+
             Image("Background-Main")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
+
             
             VStack {
+                BackButton()
                 HomeHeader()
-                    .offset(y: -250)
-                TimeQuery()
-                    .offset(y: -150)
+                    .offset(y: 20)
+                SleepTimeComp()
+
             }
         }
     }
 }
 
-
-
-struct ContentView_Previews: PreviewProvider {
+struct SleepTimesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SleepTimesView()
     }
 }
