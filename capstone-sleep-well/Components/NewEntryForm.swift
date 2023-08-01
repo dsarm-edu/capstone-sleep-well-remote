@@ -15,8 +15,8 @@ struct NewEntryForm: View {
     @State private var notesField: String = ""
 
     var body: some View {
-//
-//        NavigationView {
+
+//        NavigationStack {
             VStack {
                 
                 HStack {
@@ -96,8 +96,8 @@ struct NewEntryForm: View {
                 .background(Color("Light-Purple"))
                 .padding(.horizontal, 35)
             }
-        }
-//    }
+//        }
+    }
 }
 
 

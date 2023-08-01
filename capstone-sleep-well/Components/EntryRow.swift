@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EntryRow: View {
+    
     var body: some View {
         
         HStack {
@@ -36,8 +37,5 @@ struct EntryRow_Previews: PreviewProvider {
             EntryRow()
             EntryRow()
         }
-        
-        
-        
     }
 }

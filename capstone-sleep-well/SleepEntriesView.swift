@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SleepEntriesView: View {
     var body: some View {
-        
-        
         ZStack {
 
             Image("Background-Main")
@@ -24,7 +22,7 @@ struct SleepEntriesView: View {
                     BackButton()
                     SleepListHeader()
                         .offset(y: 20)
-                    EntryRow()
+                    EntryList()
                         .offset(y: 30)
 
                 }

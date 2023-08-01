@@ -43,17 +43,24 @@ struct SleepTimeComp: View {
                 Spacer()
             }
             
+            Image("Text-WakeTimes3")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+//                .frame(width: 320, height: 150)
+            
             Image("Text-Info1")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 320, height: 150)
-                .offset(y:50)
+//                .frame(width: 320, height: 150)
+                .offset(y:-50)
             
             Image("Text-Info2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 320, height: 150)
-                .offset(y: -50)
+//                .frame(width: 320, height: 150)
+                .offset(y: -120)
+            
+            
         }
 //        .background(Color("Dark-Purple"))
 
