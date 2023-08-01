@@ -32,7 +32,6 @@ struct TimeQuery: View {
                         
                         Button {
                             calculateSleepTimes()
-//                      Put calculateSleepTimes function here?
 //                      Do I need an .onChange here?
                         } label: {
                             Image("Button-Go")
@@ -46,6 +45,7 @@ struct TimeQuery: View {
     }
     
     func calculateSleepTimes() {
+        
         let currentDate = Date()
         let calendar = Calendar.current
         let selectedComponents = calendar.dateComponents([.hour, .minute], from: selectTime)

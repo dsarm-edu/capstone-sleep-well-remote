@@ -10,6 +10,7 @@
 		500EBF5E2A7837DA000B4839 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 500EBF5D2A7837DA000B4839 /* FirebaseFirestore */; };
 		500EBF602A7837DA000B4839 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 500EBF5F2A7837DA000B4839 /* FirebaseFirestoreSwift */; };
 		500EBF682A785793000B4839 /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500EBF672A785793000B4839 /* EntryList.swift */; };
+		500EBF6B2A78CFD7000B4839 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 500EBF6A2A78CFD7000B4839 /* Charts */; };
 		50104CBB2A742EAB006D571B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBA2A742EAB006D571B /* BackButton.swift */; };
 		50104CBD2A743F3F006D571B /* EntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBC2A743F3F006D571B /* EntryRow.swift */; };
 		50104CBF2A744184006D571B /* SleepEntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBE2A744184006D571B /* SleepEntriesView.swift */; };
@@ -53,6 +54,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				500EBF5E2A7837DA000B4839 /* FirebaseFirestore in Frameworks */,
+				500EBF6B2A78CFD7000B4839 /* Charts in Frameworks */,
 				500EBF602A7837DA000B4839 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +136,7 @@
 			packageProductDependencies = (
 				500EBF5D2A7837DA000B4839 /* FirebaseFirestore */,
 				500EBF5F2A7837DA000B4839 /* FirebaseFirestoreSwift */,
+				500EBF6A2A78CFD7000B4839 /* Charts */,
 			);
 			productName = "capstone-sleep-well";
 			productReference = 507550662A7089C100C1BB9D /* capstone-sleep-well.app */;
@@ -165,6 +168,7 @@
 			mainGroup = 5075505D2A7089C100C1BB9D;
 			packageReferences = (
 				500EBF5C2A7837DA000B4839 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				500EBF692A78CFD7000B4839 /* XCRemoteSwiftPackageReference "swiftui-charts" */,
 			);
 			productRefGroup = 507550672A7089C100C1BB9D /* Products */;
 			projectDirPath = "";
@@ -416,6 +420,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		500EBF692A78CFD7000B4839 /* XCRemoteSwiftPackageReference "swiftui-charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/spacenation/swiftui-charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -428,6 +440,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 500EBF5C2A7837DA000B4839 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		500EBF6A2A78CFD7000B4839 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 500EBF692A78CFD7000B4839 /* XCRemoteSwiftPackageReference "swiftui-charts" */;
+			productName = Charts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
