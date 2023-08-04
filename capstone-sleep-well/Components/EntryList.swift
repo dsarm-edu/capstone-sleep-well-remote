@@ -8,23 +8,17 @@
 import SwiftUI
 
 struct EntryList: View {
+    @EnvironmentObject var entryManager: EntryManager
+    
     
     var body: some View {
         ScrollView {
-            EntryRow()
-                .onTapGesture {
-                    print("Row 1 tapped")
-                }
-            
-            EntryRow()
-                .onTapGesture {
-                    print("Row 2 tapped")
-                }
-            EntryRow()
-                .onTapGesture {
-                    print("Row 3 tapped")
-                }
-            
+            ForEach(entryManager.entries, id: \.id) { entry in
+                EntryRow(entry: entry)
+                    .onTapGesture {
+                        print("Entry with ID \(String(describing: entry.id)) tapped")
+                    }
+            }
         }
     }
 }
@@ -32,5 +26,6 @@ struct EntryList: View {
 struct EntryList_Previews: PreviewProvider {
     static var previews: some View {
         EntryList()
+            .environmentObject(EntryManager())
     }
 }

@@ -10,9 +10,15 @@ import Firebase
 
 @main
 struct capstone_sleep_wellApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            SleepEntriesView(entryManager: EntryManager())
         }
     }
 }

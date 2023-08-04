@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SleepEntriesView: View {
+    @StateObject var entryManager: EntryManager
+    
+    
     var body: some View {
         ZStack {
 
@@ -19,10 +22,10 @@ struct SleepEntriesView: View {
             ScrollView {
                 
                 VStack {
-                    BackButton()
                     SleepListHeader()
                         .offset(y: 20)
                     EntryList()
+                        .environmentObject(entryManager)
                         .offset(y: 30)
 
                 }
@@ -33,6 +36,6 @@ struct SleepEntriesView: View {
 
 struct SleepEntriesView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEntriesView()
+        SleepEntriesView(entryManager: EntryManager())
     }
 }

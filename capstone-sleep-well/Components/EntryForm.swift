@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewEntryForm: View {
+struct EntryForm: View {
     
     @State private var selectDate = Date.now
     @State private var selectBedTime = Date.now
@@ -101,8 +101,8 @@ struct NewEntryForm: View {
 }
 
 
-struct NewEntryForm_Previews: PreviewProvider {
+struct EntryForm_Previews: PreviewProvider {
     static var previews: some View {
-        NewEntryForm()
+        EntryForm()
     }
 }

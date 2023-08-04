@@ -11,13 +11,13 @@
 		500EBF602A7837DA000B4839 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 500EBF5F2A7837DA000B4839 /* FirebaseFirestoreSwift */; };
 		500EBF682A785793000B4839 /* EntryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500EBF672A785793000B4839 /* EntryList.swift */; };
 		500EBF6B2A78CFD7000B4839 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 500EBF6A2A78CFD7000B4839 /* Charts */; };
-		50104CBB2A742EAB006D571B /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBA2A742EAB006D571B /* BackButton.swift */; };
 		50104CBD2A743F3F006D571B /* EntryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBC2A743F3F006D571B /* EntryRow.swift */; };
 		50104CBF2A744184006D571B /* SleepEntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CBE2A744184006D571B /* SleepEntriesView.swift */; };
 		50104CC12A746778006D571B /* SleepListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CC02A746778006D571B /* SleepListHeader.swift */; };
 		50104CC32A74749F006D571B /* EntryFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CC22A74749F006D571B /* EntryFormView.swift */; };
 		50104CC52A747B4B006D571B /* SleepTimeCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50104CC42A747B4B006D571B /* SleepTimeCalculation.swift */; };
-		503BC5D02A73106C002D8C33 /* NewEntryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5CF2A73106C002D8C33 /* NewEntryForm.swift */; };
+		5022A8B42A7C0612009A6467 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5022A8B32A7C0612009A6467 /* GoogleService-Info.plist */; };
+		503BC5D02A73106C002D8C33 /* EntryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5CF2A73106C002D8C33 /* EntryForm.swift */; };
 		503BC5D22A731F21002D8C33 /* TimeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5D12A731F21002D8C33 /* TimeQuery.swift */; };
 		503BC5D42A732577002D8C33 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5D32A732577002D8C33 /* HomeHeader.swift */; };
 		503BC5D62A735FFB002D8C33 /* SleepTimesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503BC5D52A735FFB002D8C33 /* SleepTimesView.swift */; };
@@ -26,17 +26,19 @@
 		5075506C2A7089C100C1BB9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075506B2A7089C100C1BB9D /* ContentView.swift */; };
 		5075506E2A7089C400C1BB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5075506D2A7089C400C1BB9D /* Assets.xcassets */; };
 		507550712A7089C400C1BB9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507550702A7089C400C1BB9D /* Preview Assets.xcassets */; };
+		50BD0E1C2A7B667300202A86 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD0E1B2A7B667300202A86 /* Entry.swift */; };
+		50BD0E1E2A7B668600202A86 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD0E1D2A7B668600202A86 /* EntryManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		500EBF672A785793000B4839 /* EntryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryList.swift; sourceTree = "<group>"; };
-		50104CBA2A742EAB006D571B /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		50104CBC2A743F3F006D571B /* EntryRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRow.swift; sourceTree = "<group>"; };
 		50104CBE2A744184006D571B /* SleepEntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepEntriesView.swift; sourceTree = "<group>"; };
 		50104CC02A746778006D571B /* SleepListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepListHeader.swift; sourceTree = "<group>"; };
 		50104CC22A74749F006D571B /* EntryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFormView.swift; sourceTree = "<group>"; };
 		50104CC42A747B4B006D571B /* SleepTimeCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimeCalculation.swift; sourceTree = "<group>"; };
-		503BC5CF2A73106C002D8C33 /* NewEntryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryForm.swift; sourceTree = "<group>"; };
+		5022A8B32A7C0612009A6467 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		503BC5CF2A73106C002D8C33 /* EntryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryForm.swift; sourceTree = "<group>"; };
 		503BC5D12A731F21002D8C33 /* TimeQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeQuery.swift; sourceTree = "<group>"; };
 		503BC5D32A732577002D8C33 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
 		503BC5D52A735FFB002D8C33 /* SleepTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimesView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,8 @@
 		5075506B2A7089C100C1BB9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5075506D2A7089C400C1BB9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507550702A7089C400C1BB9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50BD0E1B2A7B667300202A86 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		50BD0E1D2A7B668600202A86 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +70,10 @@
 			isa = PBXGroup;
 			children = (
 				503BC5D72A736171002D8C33 /* SleepTimeComp.swift */,
-				503BC5CF2A73106C002D8C33 /* NewEntryForm.swift */,
+				503BC5CF2A73106C002D8C33 /* EntryForm.swift */,
 				503BC5D12A731F21002D8C33 /* TimeQuery.swift */,
 				503BC5D32A732577002D8C33 /* HomeHeader.swift */,
 				50104CC02A746778006D571B /* SleepListHeader.swift */,
-				50104CBA2A742EAB006D571B /* BackButton.swift */,
 				50104CBC2A743F3F006D571B /* EntryRow.swift */,
 				500EBF672A785793000B4839 /* EntryList.swift */,
 				50104CC42A747B4B006D571B /* SleepTimeCalculation.swift */,
@@ -97,11 +100,14 @@
 		507550682A7089C100C1BB9D /* capstone-sleep-well */ = {
 			isa = PBXGroup;
 			children = (
+				5022A8B32A7C0612009A6467 /* GoogleService-Info.plist */,
+				50BD0E1A2A7B665800202A86 /* Networking */,
+				50BD0E192A7B664E00202A86 /* Models */,
 				503BC5CA2A730562002D8C33 /* Components */,
 				507550692A7089C100C1BB9D /* capstone_sleep_wellApp.swift */,
 				5075506B2A7089C100C1BB9D /* ContentView.swift */,
-				503BC5D52A735FFB002D8C33 /* SleepTimesView.swift */,
 				50104CBE2A744184006D571B /* SleepEntriesView.swift */,
+				503BC5D52A735FFB002D8C33 /* SleepTimesView.swift */,
 				50104CC22A74749F006D571B /* EntryFormView.swift */,
 				5075506D2A7089C400C1BB9D /* Assets.xcassets */,
 				5075506F2A7089C400C1BB9D /* Preview Content */,
@@ -115,6 +121,22 @@
 				507550702A7089C400C1BB9D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50BD0E192A7B664E00202A86 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50BD0E1B2A7B667300202A86 /* Entry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		50BD0E1A2A7B665800202A86 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				50BD0E1D2A7B668600202A86 /* EntryManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +208,7 @@
 			files = (
 				507550712A7089C400C1BB9D /* Preview Assets.xcassets in Resources */,
 				5075506E2A7089C400C1BB9D /* Assets.xcassets in Resources */,
+				5022A8B42A7C0612009A6467 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,15 +219,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50BD0E1C2A7B667300202A86 /* Entry.swift in Sources */,
 				503BC5D62A735FFB002D8C33 /* SleepTimesView.swift in Sources */,
 				50104CC52A747B4B006D571B /* SleepTimeCalculation.swift in Sources */,
 				5075506C2A7089C100C1BB9D /* ContentView.swift in Sources */,
 				50104CBF2A744184006D571B /* SleepEntriesView.swift in Sources */,
-				50104CBB2A742EAB006D571B /* BackButton.swift in Sources */,
-				503BC5D02A73106C002D8C33 /* NewEntryForm.swift in Sources */,
+				503BC5D02A73106C002D8C33 /* EntryForm.swift in Sources */,
 				500EBF682A785793000B4839 /* EntryList.swift in Sources */,
 				503BC5D82A736171002D8C33 /* SleepTimeComp.swift in Sources */,
 				503BC5D42A732577002D8C33 /* HomeHeader.swift in Sources */,
+				50BD0E1E2A7B668600202A86 /* EntryManager.swift in Sources */,
 				50104CC32A74749F006D571B /* EntryFormView.swift in Sources */,
 				50104CC12A746778006D571B /* SleepListHeader.swift in Sources */,
 				5075506A2A7089C100C1BB9D /* capstone_sleep_wellApp.swift in Sources */,

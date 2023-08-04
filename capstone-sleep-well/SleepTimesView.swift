@@ -18,7 +18,6 @@ struct SleepTimesView: View {
 
             
             VStack {
-                BackButton()
                 HomeHeader()
                     .offset(y: 20)
                 SleepTimeComp()

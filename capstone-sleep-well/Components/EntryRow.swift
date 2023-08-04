@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct EntryRow: View {
+    var entry: Entry
     
     var body: some View {
         
         HStack {
-            Text("July 27, 2023")
+            Text(entry.formatEntryDate())
                 .foregroundColor(.white)
+//          call the entry.name of func/date formatter
             
             Spacer()
             Button {
@@ -34,8 +36,9 @@ struct EntryRow: View {
 struct EntryRow_Previews: PreviewProvider {
     static var previews: some View {
         List {
-            EntryRow()
-            EntryRow()
+            EntryRow(entry: Entry(date: Date(), sleepTime: Date(), wakeTime: Date(), notes: "Testing"))
+//            put hard coded data here
+//            EntryRow()
         }
     }
 }

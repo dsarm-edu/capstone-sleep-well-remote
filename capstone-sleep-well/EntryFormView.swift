@@ -17,9 +17,8 @@ struct EntryFormView: View {
             
             ScrollView {
                 VStack {
-                    BackButton()
                     HomeHeader()
-                    NewEntryForm()
+                    EntryForm()
                 }
             }
         }
