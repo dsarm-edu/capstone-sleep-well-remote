@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EntryRow: View {
+    
+    @EnvironmentObject var entryManager: EntryManager
     var entry: Entry
     
     var body: some View {
@@ -19,7 +21,7 @@ struct EntryRow: View {
             
             Spacer()
             Button {
-                print("Delete Button Pressed")
+                entryManager.deleteEntry(toDelete: entry)
             } label: {
                 Image(systemName: "trash")
                     .foregroundColor(.white)

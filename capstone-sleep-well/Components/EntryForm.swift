@@ -9,10 +9,12 @@ import SwiftUI
 
 struct EntryForm: View {
     
+    @EnvironmentObject var entryManager: EntryManager
+    
     @State private var selectDate = Date.now
     @State private var selectBedTime = Date.now
     @State private var selectWakeTime = Date.now
-    @State private var notesField: String = ""
+    @State private var notes: String = ""
 
     var body: some View {
 
@@ -74,7 +76,7 @@ struct EntryForm: View {
                 
                 HStack {
                    
-                    TextField("", text: $notesField)
+                    TextField("", text: $notes)
                         .foregroundColor(.white)
                         .frame(height: 150)
                         .padding(.horizontal, 19)
@@ -84,7 +86,9 @@ struct EntryForm: View {
                 }
                 HStack {
                     Button {
-                        print("Save Button Pressed")
+//                        fire off network call
+                        entryManager.addEntry(date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
+                        
                     } label: {
                         Text("Save")
                             .foregroundColor(.white)
@@ -104,5 +108,6 @@ struct EntryForm: View {
 struct EntryForm_Previews: PreviewProvider {
     static var previews: some View {
         EntryForm()
+            .environmentObject(EntryManager())
     }
 }

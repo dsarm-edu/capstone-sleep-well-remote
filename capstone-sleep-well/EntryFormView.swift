@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct EntryFormView: View {
+    @StateObject var entryManager: EntryManager
+    
     var body: some View {
         ZStack {
             Image("Background-Main")
@@ -19,6 +21,7 @@ struct EntryFormView: View {
                 VStack {
                     HomeHeader()
                     EntryForm()
+                        .environmentObject(entryManager)
                 }
             }
         }
@@ -27,6 +30,6 @@ struct EntryFormView: View {
 
 struct EntryFormView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryFormView()
+        EntryFormView(entryManager: EntryManager())
     }
 }

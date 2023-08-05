@@ -48,4 +48,42 @@ class EntryManager: ObservableObject {
             })
         }
     }
+    
+    func addEntry(date: Date, sleepTime: Date, wakeTime: Date, notes: String) {
+        //        If there is no entry, just return
+        guard !date.description.isEmpty else {
+            return
+        }
+        //    Create a new Entry instance with the date parameter, sleepTime parameter, wakeTime parameter, and notes parameter
+        let newEntry = Entry(
+            date: date,
+            sleepTime: sleepTime,
+            wakeTime: wakeTime,
+            notes: notes)
+        
+        //    Create a new document in Firestore with the newEntry variable above, and use setData(from:)
+        //    to convert the Entry into Firestore data.
+        
+        do {
+            try db.collection("entries").document().setData(from: newEntry)
+            
+        } catch {
+            print("Error adding entry to Firestore: \(error)")
+        }
+    }
+    
+    func deleteEntry(toDelete: Entry) {
+        guard let entryID = toDelete.id else {
+            print("Error: Entry ID missing")
+            return
+        }
+        
+        db.collection("entries").document(entryID).delete() { error in
+            if let error = error {
+                print("Error removing entry: \(error)")
+            } else {
+                print("Entry \(entryID) succesfully removed.")
+            }
+        }
+    }
 }
