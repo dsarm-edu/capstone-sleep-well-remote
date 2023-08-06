@@ -27,7 +27,6 @@ struct SleepEntriesView: View {
                     EntryList()
                         .environmentObject(entryManager)
                         .offset(y: 30)
-
                 }
             }
         }

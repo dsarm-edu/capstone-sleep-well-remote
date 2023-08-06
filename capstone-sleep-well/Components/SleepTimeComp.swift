@@ -22,7 +22,8 @@ struct SleepTimeComp: View {
                 Spacer()
                 Spacer()
                 Spacer()
-                Image("Block-4")
+                
+                Image("Block-6")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 350.0, height: 50.0)
@@ -35,7 +36,7 @@ struct SleepTimeComp: View {
                 
                 Spacer()
                 
-                Image("Block-6")
+                Image("Block-4")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 350.0, height: 50.0)
