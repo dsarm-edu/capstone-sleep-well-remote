@@ -20,12 +20,23 @@ struct EntryRow: View {
 //          call the entry.name of func/date formatter
             
             Spacer()
+            
+            Button {
+                print("Edit button pressed")
+//                entryManager.updateEntry(toUpdate: entry)
+            } label: {
+                Image(systemName: "pencil")
+                    .foregroundColor(.white)
+            }
+            .buttonStyle(BorderlessButtonStyle())
+            
             Button {
                 entryManager.deleteEntry(toDelete: entry)
             } label: {
                 Image(systemName: "trash")
                     .foregroundColor(.white)
             }
+            .buttonStyle(BorderlessButtonStyle())
         }
         .frame(height: 35)
         .padding(.horizontal, 19)

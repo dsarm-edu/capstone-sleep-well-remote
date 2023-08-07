@@ -86,4 +86,22 @@ class EntryManager: ObservableObject {
             }
         }
     }
+    
+    func updateEntry(toUpdate: Entry) {
+        guard let entryID = toUpdate.id else {
+            print("Error: Entry ID missing")
+            return
+        }
+        
+        let docRef = db.collection("entries").document(entryID)
+        
+        docRef.updateData(["date": Date(),"sleepTime": Date(), "wakeTime": Date(), "notes": String()]) {
+            error in
+            if let error = error {
+                print("Error updating document: \(error)")
+            } else {
+                print("Document succesfully updated")
+            }
+        }
+    }
 }
