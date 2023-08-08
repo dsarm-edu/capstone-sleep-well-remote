@@ -10,38 +10,46 @@ import SwiftUI
 struct TimeQuery: View {
     @State var selectTime = Date.now
     @State var wakeUpTime: Date?
-//    @State var isGoButtonPressed = false
-//    Do I need isGoButtonPressed?
+    @Binding public var path: NavigationPath
     
+//    let path : String
+
     var body: some View {
-                VStack {
+        
+        ZStack {
+            
+            Image("Text-TimeQuery")
+                .resizable()
+                .frame(width: 300, height: 100)
+                .offset(y: -100)
+            
+            HStack {
+                Spacer()
                 
-                    Image("Text-TimeQuery")
+                DatePicker("Please enter a time", selection: $selectTime, displayedComponents: .hourAndMinute)
+                    .labelsHidden()
+                    .datePickerStyle(.compact)
+                    .colorInvert()
+                
+                Spacer()
+                
+                Button {
+                    calculateSleepTimes()
+                    path.append("sleepTimesView")
+                } label: {
+                    Image("Button-Go")
                         .resizable()
-                        .frame(width: 300, height: 100)
-
-                    HStack {
-                        Spacer()
-
-                        DatePicker("Please enter a time", selection: $selectTime, displayedComponents: .hourAndMinute)
-                            .labelsHidden()
-                            .datePickerStyle(.compact)
-                            .colorInvert()
-     
-                        Spacer()
-                        
-                        Button {
-                            calculateSleepTimes()
-//                      Do I need an .onChange here?
-                        } label: {
-                            Image("Button-Go")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:120.0, height: 40.0)
-                        }
-                        Spacer()
-                    }
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:120.0, height: 40.0)
                 }
+                
+                .navigationDestination(for: String.self) { view in
+                    SleepTimesView()
+                }
+                Spacer()
+            }
+        }
+
     }
     
     func calculateSleepTimes() {
@@ -78,6 +86,7 @@ struct TimeQuery: View {
         print("Sleep time (6 cycles): \(sleepTime6CyclesString)")
         print("Sleep time (5 cycles): \(sleepTime5CyclesString)")
         print("Sleep time (4 cycles): \(sleepTime4CyclesString)")
+
         
 //        1. Get the wake time (WT) from user - How to get that data from time picker?
         
@@ -97,7 +106,7 @@ struct TimeQuery: View {
 
 struct TimeQuery_Previews: PreviewProvider {
     static var previews: some View {
-        TimeQuery()
-            .background(Color("Dark-Purple"))
+        TimeQuery(path: .constant(NavigationPath()))
+//            .background(Image("Background-Main"))
     }
 }

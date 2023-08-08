@@ -26,6 +26,8 @@
 		5075506C2A7089C100C1BB9D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5075506B2A7089C100C1BB9D /* ContentView.swift */; };
 		5075506E2A7089C400C1BB9D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5075506D2A7089C400C1BB9D /* Assets.xcassets */; };
 		507550712A7089C400C1BB9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 507550702A7089C400C1BB9D /* Preview Assets.xcassets */; };
+		50937C382A8151B400F172F7 /* SleepTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50937C372A8151B400F172F7 /* SleepTimes.swift */; };
+		50937C3A2A82BFEA00F172F7 /* TQ Backup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50937C392A82BFEA00F172F7 /* TQ Backup.swift */; };
 		50BD0E1C2A7B667300202A86 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD0E1B2A7B667300202A86 /* Entry.swift */; };
 		50BD0E1E2A7B668600202A86 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BD0E1D2A7B668600202A86 /* EntryManager.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		5075506B2A7089C100C1BB9D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5075506D2A7089C400C1BB9D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		507550702A7089C400C1BB9D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50937C372A8151B400F172F7 /* SleepTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimes.swift; sourceTree = "<group>"; };
+		50937C392A82BFEA00F172F7 /* TQ Backup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TQ Backup.swift"; sourceTree = "<group>"; };
 		50BD0E1B2A7B667300202A86 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		50BD0E1D2A7B668600202A86 /* EntryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,7 +80,9 @@
 				50104CC02A746778006D571B /* SleepListHeader.swift */,
 				50104CBC2A743F3F006D571B /* EntryRow.swift */,
 				500EBF672A785793000B4839 /* EntryList.swift */,
+				50937C372A8151B400F172F7 /* SleepTimes.swift */,
 				50104CC42A747B4B006D571B /* SleepTimeCalculation.swift */,
+				50937C392A82BFEA00F172F7 /* TQ Backup.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -225,9 +231,11 @@
 				5075506C2A7089C100C1BB9D /* ContentView.swift in Sources */,
 				50104CBF2A744184006D571B /* SleepEntriesView.swift in Sources */,
 				503BC5D02A73106C002D8C33 /* EntryForm.swift in Sources */,
+				50937C382A8151B400F172F7 /* SleepTimes.swift in Sources */,
 				500EBF682A785793000B4839 /* EntryList.swift in Sources */,
 				503BC5D82A736171002D8C33 /* SleepTimeComp.swift in Sources */,
 				503BC5D42A732577002D8C33 /* HomeHeader.swift in Sources */,
+				50937C3A2A82BFEA00F172F7 /* TQ Backup.swift in Sources */,
 				50BD0E1E2A7B668600202A86 /* EntryManager.swift in Sources */,
 				50104CC32A74749F006D571B /* EntryFormView.swift in Sources */,
 				50104CC12A746778006D571B /* SleepListHeader.swift in Sources */,

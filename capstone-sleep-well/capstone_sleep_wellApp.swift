@@ -17,8 +17,8 @@ struct capstone_sleep_wellApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            SleepEntriesView(entryManager: EntryManager())
+            ContentView()
+//            SleepEntriesView(entryManager: EntryManager())
         }
     }
 }

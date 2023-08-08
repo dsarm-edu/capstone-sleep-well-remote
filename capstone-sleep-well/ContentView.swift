@@ -8,23 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State public var path = NavigationPath()
+//    @State public var path: String = ""
+    
     var body: some View {
-        
-        ZStack {
-            Image("Background-Main")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .ignoresSafeArea()
             
-            VStack {
-                HomeHeader()
-                    .offset(y: -250)
-                TimeQuery()
-                    .offset(y: -150)
+        NavigationStack (path: $path) {
+            GeometryReader { geometry in
+                Image("Background-Main")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                    .frame(width:geometry.size.width, height: geometry.size.height)
             }
+            .overlay(
+            
+                VStack {
+                    HomeHeader()
+                        .offset(y: -250)
+                    
+                    TimeQuery(path: $path)
+                        .offset(y: -150)
+                }
+        )
         }
     }
 }
+
+
 
 
 struct ContentView_Previews: PreviewProvider {

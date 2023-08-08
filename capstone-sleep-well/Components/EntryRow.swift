@@ -9,40 +9,49 @@ import SwiftUI
 
 struct EntryRow: View {
     
+    @State private var path = NavigationPath()
+    
     @EnvironmentObject var entryManager: EntryManager
     var entry: Entry
     
     var body: some View {
         
-        HStack {
-            Text(entry.formatEntryDate())
-                .foregroundColor(.white)
-//          call the entry.name of func/date formatter
+        NavigationStack(path: $path) {
             
-            Spacer()
-            
-            Button {
-                print("Edit button pressed")
-//                entryManager.updateEntry(toUpdate: entry)
-            } label: {
-                Image(systemName: "pencil")
+            HStack {
+                Text(entry.formatEntryDate())
                     .foregroundColor(.white)
+                
+                Spacer()
+                
+                Button {
+                    
+//                    print("Edit button pressed")
+//                    entryManager.updateEntry(toUpdate: entry)
+                    path.append("EntryForm")
+                } label: {
+                    Image(systemName: "pencil")
+                        .foregroundColor(.white)
+                }
+                .navigationDestination(for: String.self) { view in
+                    EntryForm()
+                }
+                .buttonStyle(BorderlessButtonStyle())
+                
+                Button {
+                    entryManager.deleteEntry(toDelete: entry)
+                } label: {
+                    Image(systemName: "trash")
+                        .foregroundColor(.white)
+                }
+                
             }
-            .buttonStyle(BorderlessButtonStyle())
-            
-            Button {
-                entryManager.deleteEntry(toDelete: entry)
-            } label: {
-                Image(systemName: "trash")
-                    .foregroundColor(.white)
-            }
-            .buttonStyle(BorderlessButtonStyle())
-        }
-        .frame(height: 35)
-        .padding(.horizontal, 19)
-        .padding(.vertical, 10)
-        .background(Color("Light-Purple"))
+            .frame(height: 35)
+            .padding(.horizontal, 19)
+            .padding(.vertical, 10)
+            .background(Color("Light-Purple"))
         .padding(.horizontal, 35)
+        }
     }
 }
 
@@ -50,8 +59,7 @@ struct EntryRow_Previews: PreviewProvider {
     static var previews: some View {
         List {
             EntryRow(entry: Entry(date: Date(), sleepTime: Date(), wakeTime: Date(), notes: "Testing"))
-//            put hard coded data here
-//            EntryRow()
+
         }
     }
 }
