@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     @State public var path = NavigationPath()
-//    @State public var path: String = ""
     
     var body: some View {
             
@@ -30,12 +29,12 @@ struct ContentView: View {
                     
                     TimeQuery(path: $path)
                         .offset(y: -150)
+                    
                 }
         )
         }
     }
 }
-
 
 
 

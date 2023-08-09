@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SleepEntriesView: View {
     @StateObject var entryManager: EntryManager
-    
+
     
     var body: some View {
         ZStack {

@@ -11,10 +11,10 @@ struct EntryForm: View {
     
     @EnvironmentObject var entryManager: EntryManager
     
-    @State private var selectDate = Date.now
-    @State private var selectBedTime = Date.now
-    @State private var selectWakeTime = Date.now
-    @State private var notes: String = ""
+    @State var selectDate = Date.now
+    @State var selectBedTime = Date.now
+    @State var selectWakeTime = Date.now
+    @State var notes: String = ""
 
     var body: some View {
 

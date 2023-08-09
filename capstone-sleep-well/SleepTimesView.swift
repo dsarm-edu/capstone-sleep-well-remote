@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SleepTimesView: View {
+    
+//    @State var sleepTimeResults: String = ""
+        
     var body: some View {
         ZStack {
 
@@ -19,9 +22,8 @@ struct SleepTimesView: View {
             
             VStack {
                 HomeHeader()
-                    .offset(y: 20)
+//                    .offset(y: 20)
                 SleepTimeComp()
-
             }
         }
     }

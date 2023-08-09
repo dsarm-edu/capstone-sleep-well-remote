@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SleepTimeComp: View {
+    
+//    @Binding var sleepTimeResults: String
+
+    
     var body: some View {
         VStack {
             
@@ -22,20 +26,20 @@ struct SleepTimeComp: View {
                 Spacer()
                 Spacer()
                 Spacer()
-                
+
                 Image("Block-6")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 350.0, height: 50.0)
                 Spacer()
-                
+
                 Image("Block-5")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 350.0, height: 50.0)
-                
+
                 Spacer()
-                
+
                 Image("Block-4")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -74,3 +78,5 @@ struct SleepTimeComp_Previews: PreviewProvider {
             .background(Color("Dark-Purple"))
     }
 }
+
+//sleepTimeResults: .constant("Sample sleepTimeResults")
