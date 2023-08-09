@@ -21,7 +21,7 @@ struct SleepTimesView: View {
 
             
             VStack {
-                HomeHeader()
+
 //                    .offset(y: 20)
                 SleepTimeComp()
             }

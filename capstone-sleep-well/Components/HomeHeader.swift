@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeHeader: View {
+    
+    @Binding public var path: NavigationPath
+    
     var body: some View {
         
         HStack {
@@ -29,6 +32,7 @@ struct HomeHeader: View {
             Spacer()
             
             Button {
+                path.append("sleepEntriesView")
             } label: {
                 Image("Button-Diary")
                     .resizable()
@@ -36,15 +40,15 @@ struct HomeHeader: View {
                     .frame(width: 40.0, height: 40.0)
                     .padding(.trailing)
             }
-            
+                
             Spacer()
+            }
         }
     }
-}
-
-struct HomeHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeHeader()
-            .background(Color("Dark-Purple"))
+    
+    struct HomeHeader_Previews: PreviewProvider {
+        static var previews: some View {
+            HomeHeader(path: .constant(NavigationPath()))
+                .background(Color("Dark-Purple"))
+        }
     }
-}

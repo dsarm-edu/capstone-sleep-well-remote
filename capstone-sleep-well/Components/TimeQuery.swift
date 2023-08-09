@@ -14,8 +14,7 @@ struct TimeQuery: View {
     @State var selectTime = Date.now
     @State var wakeUpTime: Date?
     @Binding public var path: NavigationPath
-//    @Binding var sleepTimeResults: String
-    
+
 
     var body: some View {
         
