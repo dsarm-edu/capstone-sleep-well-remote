@@ -14,11 +14,6 @@ struct SleepEntriesView: View {
     var body: some View {
         ZStack {
 
-//            Image("Background-Main")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .ignoresSafeArea()
-//
             ScrollView {
                 
                 VStack {

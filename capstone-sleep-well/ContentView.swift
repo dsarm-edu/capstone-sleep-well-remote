@@ -24,18 +24,17 @@ struct ContentView: View {
             .overlay(
             
                 VStack {
+                    
+                    
                     HomeHeader(path: $path)
                         .offset(y: -250)
                     
                     TimeQuery(path: $path)
                         .offset(y: -150)
-                    
                 }
-        )
-        }
+        )}
     }
 }
-
 
 
 struct ContentView_Previews: PreviewProvider {

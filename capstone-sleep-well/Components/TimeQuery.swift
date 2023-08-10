@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TimeQuery: View {
     
+    @State private var sleepTimeResults = ""
+    
     @ObservedObject var time: Time = Time()
     
     @State var selectTime = Date.now
@@ -37,31 +39,31 @@ struct TimeQuery: View {
                 
                 Button {
                     time.calculateSleepTimes()
-                    path.append("sleepTimesView")
+                    sleepTimeResults = time.sleepTimeResults
+                    path.append("SleepTimesView")
                 } label: {
                     Image("Button-Go")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width:120.0, height: 40.0)
                 }
-                
                 .navigationDestination(for: String.self) { view in
-                    SleepTimesView()
+                    SleepTimesView(sleepTimeResults: sleepTimeResults)
                 }
-                Spacer()
+                    Spacer()
             }
         }
     }
-}
+
 
 //        Print calculateSleepTimes function results to the SleepTimesView
 //        Put calculateSleepTimes results in a variable
 
 
-struct TimeQuery_Previews: PreviewProvider {
-    static var previews: some View {
-        TimeQuery(path: .constant(NavigationPath()))
-//            .background(Image("Background-Main"))
+    struct TimeQuery_Previews: PreviewProvider {
+        static var previews: some View {
+            TimeQuery(path: .constant(NavigationPath()))
+            //            .background(Image("Background-Main"))
+        }
     }
-        
 }

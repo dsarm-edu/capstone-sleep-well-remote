@@ -44,6 +44,13 @@ class Time: ObservableObject {
         let sleepTime6CyclesString = formatter.string(from: sleepTime6Cycles ?? currentDate)
         let sleepTime5CyclesString = formatter.string(from: sleepTime5Cycles ?? currentDate)
         let sleepTime4CyclesString = formatter.string(from: sleepTime4Cycles ?? currentDate)
+        
+        sleepTimeResults = """
+                Wake up time: \(wakeUpTimeString)
+                6 sleep cycles: \(sleepTime6CyclesString)
+                5 sleep cycles: \(sleepTime5CyclesString)
+                4 sleep cycles: \(sleepTime4CyclesString)
+            """
 
         print("Wake up time: \(wakeUpTimeString)")
         print("Sleep time (6 cycles): \(sleepTime6CyclesString)")

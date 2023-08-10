@@ -31,15 +31,23 @@ struct HomeHeader: View {
             Spacer()
             Spacer()
             
-            Button {
-                path.append("sleepEntriesView")
-            } label: {
-                Image("Button-Diary")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40.0, height: 40.0)
-                    .padding(.trailing)
+//            Triggers print statement but does not navigate to the SleepEntriesView
+            
+            NavigationLink(destination: SleepEntriesView(entryManager: EntryManager())) {
+                Button(action: {
+                    print("Button/emoji pressed")
+                }) {
+                    Image("Button-Diary")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40.0, height: 40.0)
+                        .padding(.trailing)
+                }
             }
+            
+//            .navigationDestination(for: String.self) { view in
+//                SleepEntriesView(entryManager: EntryManager())
+//            }
                 
             Spacer()
             }
@@ -48,6 +56,7 @@ struct HomeHeader: View {
     
     struct HomeHeader_Previews: PreviewProvider {
         static var previews: some View {
+//            HomeHeader()
             HomeHeader(path: .constant(NavigationPath()))
                 .background(Color("Dark-Purple"))
         }
