@@ -9,11 +9,16 @@ import SwiftUI
 
 struct SleepEntriesView: View {
     @StateObject var entryManager: EntryManager
-
+    
     
     var body: some View {
         ZStack {
 
+            Image("Background-Main")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .ignoresSafeArea()
+            
             ScrollView {
                 
                 VStack {
@@ -25,7 +30,6 @@ struct SleepEntriesView: View {
                 }
             }
         }
-        .background(Image("Background-Main"))
     }
 }
 
