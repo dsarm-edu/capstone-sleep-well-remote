@@ -16,6 +16,8 @@ struct TimeQuery: View {
     @State var selectTime = Date.now
     @State var wakeUpTime: Date?
     @Binding public var path: NavigationPath
+    
+    @State var showTimes: Bool = false
 
 
     var body: some View {
@@ -40,14 +42,15 @@ struct TimeQuery: View {
                 Button {
                     time.calculateSleepTimes()
                     sleepTimeResults = time.sleepTimeResults
-                    path.append("SleepTimesView")
+//                    path.append("SleepTimesView")
+                    showTimes = true
                 } label: {
                     Image("Button-Go")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width:120.0, height: 40.0)
                 }
-                .navigationDestination(for: String.self) { view in
+                .navigationDestination(isPresented: $showTimes) {
                     SleepTimesView(sleepTimeResults: sleepTimeResults)
                 }
                     Spacer()

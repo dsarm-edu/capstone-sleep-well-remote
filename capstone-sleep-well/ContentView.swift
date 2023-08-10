@@ -25,9 +25,8 @@ struct ContentView: View {
             .overlay(
             
                 VStack {
-                    
-                    
-                    HomeHeader(path: $path, showDetails: $showDetails)
+
+                    HomeHeader(path: $path)
                         .offset(y: -250)
                     
                     TimeQuery(path: $path)

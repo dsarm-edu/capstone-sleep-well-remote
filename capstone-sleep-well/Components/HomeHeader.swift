@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeHeader: View {
     
     @Binding public var path: NavigationPath
-    @Binding var showDetails: Bool
+    @State var showEntries: Bool = false
     
     var body: some View {
         
@@ -31,11 +31,9 @@ struct HomeHeader: View {
             Spacer()
             Spacer()
             Spacer()
-            
-//            Triggers print statement but does not navigate to the SleepEntriesView
-            
+                  
             Button {
-                showDetails = true
+                showEntries = true
             } label: {
                 Image("Button-Diary")
                     .resizable()
@@ -44,20 +42,8 @@ struct HomeHeader: View {
                     .padding(.trailing)
             }
             
-//            NavigationLink(destination: SleepEntriesView(entryManager: EntryManager())) {
-//                Button(action: {
-//                    print("Button/emoji pressed")
-//                }) {
-//                    Image("Button-Diary")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 40.0, height: 40.0)
-//                        .padding(.trailing)
-//                }
-//            }
-            
-            .navigationDestination(isPresented: $showDetails) {
-                SleepEntriesView(entryManager: EntryManager())
+            .navigationDestination(isPresented: $showEntries) {
+                SleepEntriesView(entryManager: EntryManager(), path: $path)
             }
                 
             Spacer()
@@ -68,7 +54,7 @@ struct HomeHeader: View {
     struct HomeHeader_Previews: PreviewProvider {
         static var previews: some View {
 //            HomeHeader()
-            HomeHeader(path: .constant(NavigationPath()), showDetails: .constant(true))
+            HomeHeader(path: .constant(NavigationPath()))
                 .background(Color("Dark-Purple"))
         }
     }

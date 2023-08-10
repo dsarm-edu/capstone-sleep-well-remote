@@ -10,7 +10,7 @@ import SwiftUI
 struct EntryFormView: View {
     @StateObject var entryManager: EntryManager
     @Binding public var path: NavigationPath
-    @Binding var showDetails: Bool
+//    @Binding var showDetails: Bool
     
     var body: some View {
         ZStack {
@@ -21,10 +21,25 @@ struct EntryFormView: View {
             
             ScrollView {
                 VStack {
-                    HomeHeader(path: $path, showDetails: $showDetails)
+                    Spacer()
+                    HStack {
+                        Image("Moon-Icon")
+                            .resizable()
+                            .frame(width: 150, height: 150)
+                    
+                        
+                        Image("SleepWell-Word-Icon")
+                            .resizable()
+                            .frame(width: 100, height: 25)
+                            .padding(.trailing)
+                        
+                        Spacer()
+                    }
+                    
                     EntryForm()
                         .environmentObject(entryManager)
                 }
+                .offset(y:25)
             }
         }
     }
@@ -32,6 +47,6 @@ struct EntryFormView: View {
 
 struct EntryFormView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryFormView(entryManager: EntryManager(), path: .constant(NavigationPath()), showDetails: .constant(true))
+        EntryFormView(entryManager: EntryManager(), path: .constant(NavigationPath()))
     }
 }

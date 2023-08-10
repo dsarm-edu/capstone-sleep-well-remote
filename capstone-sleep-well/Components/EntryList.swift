@@ -10,11 +10,13 @@ import SwiftUI
 struct EntryList: View {
     @EnvironmentObject var entryManager: EntryManager
     
+    @Binding var path: NavigationPath
+//    @Binding var showDetails: Bool
     
     var body: some View {
         ScrollView {
             ForEach(entryManager.entries, id: \.id) { entry in
-                EntryRow(entry: entry)
+                EntryRow(entry: entry, path: $path)
                     .onTapGesture {
                         print("Entry with ID \(String(describing: entry.id)) tapped")
                     }
@@ -25,7 +27,8 @@ struct EntryList: View {
 
 struct EntryList_Previews: PreviewProvider {
     static var previews: some View {
-        EntryList()
+        EntryList(path: .constant(NavigationPath()))
             .environmentObject(EntryManager())
+            .background(Color("Dark-Purple"))
     }
 }

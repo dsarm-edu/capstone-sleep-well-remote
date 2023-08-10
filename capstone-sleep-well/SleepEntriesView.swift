@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SleepEntriesView: View {
     @StateObject var entryManager: EntryManager
-    
+    @Binding var path: NavigationPath
+//    @Binding var showDetails: Bool
     
     var body: some View {
         ZStack {
@@ -22,19 +23,21 @@ struct SleepEntriesView: View {
             ScrollView {
                 
                 VStack {
-                    SleepListHeader()
+                    SleepListHeader(path: $path)
                         .offset(y: 20)
-                    EntryList()
+                    EntryList(path: $path)
                         .environmentObject(entryManager)
                         .offset(y: 30)
                 }
             }
         }
+        .offset(y: 15)
     }
 }
 
 struct SleepEntriesView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepEntriesView(entryManager: EntryManager())
+        SleepEntriesView(entryManager: EntryManager(),
+                         path: .constant(NavigationPath()))
     }
 }

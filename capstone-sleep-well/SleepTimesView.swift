@@ -19,12 +19,10 @@ struct SleepTimesView: View {
                 .aspectRatio(contentMode: .fill)
                 .ignoresSafeArea()
 
-            
             VStack {
-
-//                    .offset(y: 20)
                 SleepTimeComp(sleepTimeResults: sleepTimeResults)
             }
+            .offset(y: 40)
         }
     }
 }

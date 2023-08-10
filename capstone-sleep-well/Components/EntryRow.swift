@@ -9,57 +9,56 @@ import SwiftUI
 
 struct EntryRow: View {
     
-    @State private var path = NavigationPath()
-    
     @EnvironmentObject var entryManager: EntryManager
     var entry: Entry
     
+    @Binding var path: NavigationPath
+    @State var showExistingEntry: Bool = false
+    
     var body: some View {
-        
-        NavigationStack(path: $path) {
+        HStack {
+            Text(entry.formatEntryDate())
+                .foregroundColor(.white)
             
-            HStack {
-                Text(entry.formatEntryDate())
+            Spacer()
+            
+            Button {
+                showExistingEntry = true
+                print("Edit button pressed")
+                //                 entryManager.updateEntry(toUpdate: entry)
+                
+            } label: {
+                Image(systemName: "pencil")
                     .foregroundColor(.white)
-                
-                Spacer()
-                
-                Button {
-                    
-//                    print("Edit button pressed")
-//                    entryManager.updateEntry(toUpdate: entry)
-                    path.append("EntryForm")
-                } label: {
-                    Image(systemName: "pencil")
-                        .foregroundColor(.white)
-                }
-                .navigationDestination(for: String.self) { view in
-                    EntryForm()
-                }
-                .buttonStyle(BorderlessButtonStyle())
-                
-                Button {
-                    entryManager.deleteEntry(toDelete: entry)
-                } label: {
-                    Image(systemName: "trash")
-                        .foregroundColor(.white)
-                }
-                
             }
-            .frame(height: 35)
-            .padding(.horizontal, 19)
-            .padding(.vertical, 10)
-            .background(Color("Light-Purple"))
-        .padding(.horizontal, 35)
+            .navigationDestination(isPresented: $showExistingEntry) {
+                EntryFormView(entryManager: EntryManager(), path: $path)
+            }
+            .buttonStyle(BorderlessButtonStyle())
+            
+            Button {
+                entryManager.deleteEntry(toDelete: entry)
+                //                showDetails = false
+            } label: {
+                Image(systemName: "trash")
+                    .foregroundColor(.white)
+            }
+            
         }
+        .frame(height: 35)
+        .padding(.horizontal, 19)
+        .padding(.vertical, 10)
+        .background(Color("Light-Purple"))
+        .padding(.horizontal, 35)
     }
-}
-
-struct EntryRow_Previews: PreviewProvider {
-    static var previews: some View {
-        List {
-            EntryRow(entry: Entry(date: Date(), sleepTime: Date(), wakeTime: Date(), notes: "Testing"))
-
+    
+    
+    struct EntryRow_Previews: PreviewProvider {
+        static var previews: some View {
+            List {
+                EntryRow(entry: Entry(date: Date(), sleepTime: Date(), wakeTime: Date(), notes: "Testing"),
+                         path: .constant(NavigationPath()))
+            }
         }
     }
 }

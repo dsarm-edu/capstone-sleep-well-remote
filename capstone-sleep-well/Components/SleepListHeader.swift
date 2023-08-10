@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SleepListHeader: View {
+    
+    @Binding var path: NavigationPath
+    @State var showEntryForm: Bool = false
+    
     var body: some View {
         HStack {
             Image("Moon-Icon")
@@ -28,6 +32,7 @@ struct SleepListHeader: View {
             Spacer()
             
             Button {
+                showEntryForm = true
                 print("Add entry button")
             } label: {
                 Image(systemName: "plus.square")
@@ -37,14 +42,18 @@ struct SleepListHeader: View {
                     .padding(.trailing)
                     .foregroundColor(.white)
             }
+            .navigationDestination(isPresented: $showEntryForm) {
+                EntryFormView(entryManager: EntryManager(), path: $path)
+            }
             Spacer()
         }
     }
-}
-
-struct SleepListHeader_Previews: PreviewProvider {
-    static var previews: some View {
-        SleepListHeader()
-            .background(Color("Dark-Purple"))
+    
+    
+    struct SleepListHeader_Previews: PreviewProvider {
+        static var previews: some View {
+            SleepListHeader(path: .constant(NavigationPath()))
+                .background(Color("Dark-Purple"))
+        }
     }
 }
