@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeHeader: View {
     
     @Binding public var path: NavigationPath
+    @Binding var showDetails: Bool
     
     var body: some View {
         
@@ -33,21 +34,31 @@ struct HomeHeader: View {
             
 //            Triggers print statement but does not navigate to the SleepEntriesView
             
-            NavigationLink(destination: SleepEntriesView(entryManager: EntryManager())) {
-                Button(action: {
-                    print("Button/emoji pressed")
-                }) {
-                    Image("Button-Diary")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40.0, height: 40.0)
-                        .padding(.trailing)
-                }
+            Button {
+                showDetails = true
+            } label: {
+                Image("Button-Diary")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40.0, height: 40.0)
+                    .padding(.trailing)
             }
             
-//            .navigationDestination(for: String.self) { view in
-//                SleepEntriesView(entryManager: EntryManager())
+//            NavigationLink(destination: SleepEntriesView(entryManager: EntryManager())) {
+//                Button(action: {
+//                    print("Button/emoji pressed")
+//                }) {
+//                    Image("Button-Diary")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: 40.0, height: 40.0)
+//                        .padding(.trailing)
+//                }
 //            }
+            
+            .navigationDestination(isPresented: $showDetails) {
+                SleepEntriesView(entryManager: EntryManager())
+            }
                 
             Spacer()
             }
@@ -57,7 +68,7 @@ struct HomeHeader: View {
     struct HomeHeader_Previews: PreviewProvider {
         static var previews: some View {
 //            HomeHeader()
-            HomeHeader(path: .constant(NavigationPath()))
+            HomeHeader(path: .constant(NavigationPath()), showDetails: .constant(true))
                 .background(Color("Dark-Purple"))
         }
     }

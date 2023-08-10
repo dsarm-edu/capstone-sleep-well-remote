@@ -10,7 +10,7 @@ import SwiftUI
 struct EntryFormView: View {
     @StateObject var entryManager: EntryManager
     @Binding public var path: NavigationPath
-    
+    @Binding var showDetails: Bool
     
     var body: some View {
         ZStack {
@@ -21,7 +21,7 @@ struct EntryFormView: View {
             
             ScrollView {
                 VStack {
-                    HomeHeader(path: $path)
+                    HomeHeader(path: $path, showDetails: $showDetails)
                     EntryForm()
                         .environmentObject(entryManager)
                 }
@@ -32,6 +32,6 @@ struct EntryFormView: View {
 
 struct EntryFormView_Previews: PreviewProvider {
     static var previews: some View {
-        EntryFormView(entryManager: EntryManager(), path: .constant(NavigationPath()))
+        EntryFormView(entryManager: EntryManager(), path: .constant(NavigationPath()), showDetails: .constant(true))
     }
 }

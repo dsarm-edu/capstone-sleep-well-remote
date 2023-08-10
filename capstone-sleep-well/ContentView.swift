@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State public var path = NavigationPath()
+    @State var showDetails = false
     
     var body: some View {
             
@@ -26,7 +27,7 @@ struct ContentView: View {
                 VStack {
                     
                     
-                    HomeHeader(path: $path)
+                    HomeHeader(path: $path, showDetails: $showDetails)
                         .offset(y: -250)
                     
                     TimeQuery(path: $path)
