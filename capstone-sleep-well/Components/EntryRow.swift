@@ -19,13 +19,12 @@ struct EntryRow: View {
         HStack {
             Text(entry.formatEntryDate())
                 .foregroundColor(.white)
-            
             Spacer()
             
             Button {
                 showExistingEntry = true
                 print("Edit button pressed")
-                //                 entryManager.updateEntry(toUpdate: entry)
+                entryManager.updateEntry(toUpdate: entry)
                 
             } label: {
                 Image(systemName: "pencil")
@@ -38,7 +37,7 @@ struct EntryRow: View {
             
             Button {
                 entryManager.deleteEntry(toDelete: entry)
-                //                showDetails = false
+
             } label: {
                 Image(systemName: "trash")
                     .foregroundColor(.white)

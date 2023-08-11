@@ -9,9 +9,7 @@ import SwiftUI
 
 struct EntryList: View {
     @EnvironmentObject var entryManager: EntryManager
-    
     @Binding var path: NavigationPath
-//    @Binding var showDetails: Bool
     
     var body: some View {
         ScrollView {

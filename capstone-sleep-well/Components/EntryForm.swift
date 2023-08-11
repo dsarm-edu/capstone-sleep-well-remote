@@ -11,6 +11,7 @@ struct EntryForm: View {
     
     @EnvironmentObject var entryManager: EntryManager
     
+    
     @State var selectDate = Date.now
     @State var selectBedTime = Date.now
     @State var selectWakeTime = Date.now
@@ -87,6 +88,7 @@ struct EntryForm: View {
                 HStack {
                     Button {
 //                        fire off network call
+//                        How do I call updateEntry here?
                         entryManager.addEntry(date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
                         
                     } label: {
