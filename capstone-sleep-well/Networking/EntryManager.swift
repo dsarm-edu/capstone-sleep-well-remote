@@ -87,7 +87,7 @@ class EntryManager: ObservableObject {
         }
     }
     
-    func updateEntry(toUpdate: Entry) {
+    func updateEntry(toUpdate: Entry, date: Date, sleepTime: Date, wakeTime: Date, notes: String) {
         guard let entryID = toUpdate.id else {
             print("Error: Entry ID missing")
             return
@@ -95,7 +95,7 @@ class EntryManager: ObservableObject {
         
         let docRef = db.collection("entries").document(entryID)
         
-        docRef.updateData(["date": Date(),"sleepTime": Date(), "wakeTime": Date(), "notes": String()]) {
+        docRef.updateData(["date": date,"sleepTime": sleepTime, "wakeTime": wakeTime, "notes": notes]) {
             error in
             if let error = error {
                 print("Error updating document: \(error)")
@@ -105,3 +105,6 @@ class EntryManager: ObservableObject {
         }
     }
 }
+
+// update data - just pass in the entry id and specific fields we want to edit
+//what values are we setting it to?

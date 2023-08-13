@@ -24,4 +24,3 @@ struct Entry: Identifiable, Codable {
         return dateFormatter.string(from: date)
     }
 }
-// add the date formatter function to this struct

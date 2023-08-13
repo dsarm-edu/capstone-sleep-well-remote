@@ -36,7 +36,7 @@ struct EntryFormView: View {
                         Spacer()
                     }
                     
-                    EntryForm()
+                    EntryForm(selectDate: Date(), selectBedTime: Date(), selectWakeTime: Date(), notes: "NOTES")
                         .environmentObject(entryManager)
                 }
                 .offset(y:25)

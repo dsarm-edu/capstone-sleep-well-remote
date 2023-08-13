@@ -19,7 +19,6 @@ struct TimeQuery: View {
     
     @State var showTimes: Bool = false
 
-
     var body: some View {
         
         ZStack {
