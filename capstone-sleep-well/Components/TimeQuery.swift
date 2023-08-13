@@ -9,12 +9,16 @@ import SwiftUI
 
 struct TimeQuery: View {
     
-    @State private var sleepTimeResults = ""
+    @StateObject var time: Time
     
-    @ObservedObject var time: Time = Time()
+    @State var sleepTimeResults = ""
     
-    @State var selectTime = Date.now
-    @State var wakeUpTime: Date?
+//    @ObservedObject var time: Time = Time()
+    
+    
+    
+//    @State var selectTime = Date()
+//    @State var wakeUpTime: Date?
     @Binding public var path: NavigationPath
     
     @State var showTimes: Bool = false
@@ -31,7 +35,7 @@ struct TimeQuery: View {
             HStack {
                 Spacer()
                 
-                DatePicker("Please enter a time", selection: $selectTime, displayedComponents: .hourAndMinute)
+                DatePicker("Please enter a time", selection: $time.selectTime, displayedComponents: .hourAndMinute)
                     .labelsHidden()
                     .datePickerStyle(.compact)
                     .colorInvert()
@@ -41,7 +45,6 @@ struct TimeQuery: View {
                 Button {
                     time.calculateSleepTimes()
                     sleepTimeResults = time.sleepTimeResults
-//                    path.append("SleepTimesView")
                     showTimes = true
                 } label: {
                     Image("Button-Go")
@@ -64,8 +67,9 @@ struct TimeQuery: View {
 
     struct TimeQuery_Previews: PreviewProvider {
         static var previews: some View {
-            TimeQuery(path: .constant(NavigationPath()))
-            //            .background(Image("Background-Main"))
+            TimeQuery(time: Time(), path: .constant(NavigationPath()))
+                        .environmentObject(Time())
+                        .background(Image("Background-Main"))
         }
     }
 }

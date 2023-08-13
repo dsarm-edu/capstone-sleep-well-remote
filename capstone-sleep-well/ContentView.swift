@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State public var path = NavigationPath()
     @State var showDetails = false
+    @StateObject var time = Time()
     
     var body: some View {
             
@@ -29,7 +30,7 @@ struct ContentView: View {
                     HomeHeader(path: $path)
                         .offset(y: -250)
                     
-                    TimeQuery(path: $path)
+                    TimeQuery(time: time, path: $path)
                         .offset(y: -80)
                 }
         )}
@@ -40,5 +41,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+        
     }
 }

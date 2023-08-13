@@ -131,8 +131,8 @@
 		50BD0E192A7B664E00202A86 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				50BD0E1B2A7B667300202A86 /* Entry.swift */,
 				50937C3B2A82F3E200F172F7 /* Time.swift */,
+				50BD0E1B2A7B667300202A86 /* Entry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

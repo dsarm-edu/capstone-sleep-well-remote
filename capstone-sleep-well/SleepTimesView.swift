@@ -9,7 +9,13 @@ import SwiftUI
 
 struct SleepTimesView: View {
     
-    var sleepTimeResults: String = ""
+//    @StateObject var time: Time
+    
+    
+//    sleepTimeResults is not updating
+    
+    @EnvironmentObject var time: Time
+    var sleepTimeResults: String
         
     var body: some View {
         ZStack {
@@ -29,6 +35,7 @@ struct SleepTimesView: View {
 
 struct SleepTimesView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepTimesView()
+        SleepTimesView(sleepTimeResults: "results")
+            .environmentObject(Time())
     }
 }

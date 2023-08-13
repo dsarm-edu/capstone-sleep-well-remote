@@ -12,8 +12,9 @@ class Time: ObservableObject {
 
     @Published var sleepTimeResults: String = ""
 
-    @Published var selectTime = Date.now
+    @Published var selectTime = Date()
     @Published var wakeUpTime: Date?
+
 
     func calculateSleepTimes() {
 
@@ -29,7 +30,7 @@ class Time: ObservableObject {
         wakeUpDateComponents.minute = selectedMinute
         wakeUpTime = calendar.date(from: wakeUpDateComponents)
 
-        // Calculate sleep cycles
+        // Calculates sleep cycles
         let nineHoursFifteenMinutes = TimeInterval(9 * 3600 + 15 * 60)
         let sevenHoursFortyFiveMinutes = TimeInterval(7 * 3600 + 45 * 60)
         let sixHoursFifteenMinutes = TimeInterval(6 * 3600 + 15 * 60)
@@ -57,6 +58,7 @@ class Time: ObservableObject {
         print("Sleep time (5 cycles): \(sleepTime5CyclesString)")
         print("Sleep time (4 cycles): \(sleepTime4CyclesString)")
 
+        
 
         //        1. Get the wake time (WT) from user - How to get that data from time picker?
 

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SleepTimeComp: View {
     
+    @EnvironmentObject var time: Time
+    
     var sleepTimeResults: String
     
     
@@ -77,6 +79,7 @@ struct SleepTimeComp: View {
 struct SleepTimeComp_Previews: PreviewProvider {
     static var previews: some View {
         SleepTimeComp(sleepTimeResults: "sleeptimeresult sample")
+            .environmentObject(Time())
             .background(Color("Dark-Purple"))
     }
 }
