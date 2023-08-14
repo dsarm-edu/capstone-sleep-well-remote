@@ -17,6 +17,7 @@ struct EntryList: View {
         ScrollView {
             ForEach(entryManager.entries, id: \.id) { entry in
                 EntryRow(entry: entry, path: $path)
+                    .environmentObject(entryManager)
                     .onTapGesture {
                         print("Entry with ID \(String(describing: entry.id)) tapped")
                     }

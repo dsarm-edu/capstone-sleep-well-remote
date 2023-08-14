@@ -10,7 +10,6 @@ import SwiftUI
 struct EntryFormView: View {
     @StateObject var entryManager: EntryManager
     @Binding public var path: NavigationPath
-//    @Binding var showDetails: Bool
     
     var body: some View {
         ZStack {
@@ -36,7 +35,8 @@ struct EntryFormView: View {
                         Spacer()
                     }
                     
-                    EntryForm(selectDate: Date(), selectBedTime: Date(), selectWakeTime: Date(), notes: "NOTES")
+                    EntryForm()
+//                    EntryList(path: $path)
                         .environmentObject(entryManager)
                 }
                 .offset(y:25)

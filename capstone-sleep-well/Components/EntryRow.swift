@@ -31,7 +31,8 @@ struct EntryRow: View {
                     .foregroundColor(.white)
             }
             .navigationDestination(isPresented: $showExistingEntry) {
-                EntryFormView(entryManager: EntryManager(), path: $path)
+                            EntryForm(entry: entry)
+                                .environmentObject(entryManager)
             }
             .buttonStyle(BorderlessButtonStyle())
             

@@ -20,44 +20,24 @@ struct EntryForm: View {
     @State var selectWakeTime: Date
     @State var notes: String
     
+    init(entry: Entry? = nil) {
+            self.entry = entry
+            
+            if let entry = entry {
+                _selectDate = State(initialValue: entry.date)
+                _selectBedTime = State(initialValue: entry.sleepTime)
+                _selectWakeTime = State(initialValue: entry.wakeTime)
+                _notes = State(initialValue: entry.notes)
+            } else {
+                let currentDate = Date()
+                _selectDate = State(initialValue: currentDate)
+                _selectBedTime = State(initialValue: currentDate)
+                _selectWakeTime = State(initialValue: currentDate)
+                _notes = State(initialValue: "")
+            }
+        }
     let db = Firestore.firestore()
-    
-    
-    //    We need something to hold on to entry so view can hold in that data
-    //    pass in same entry to form
-    //    init method that has a conditional if we're given an entry/value, use the values from entry
-    
-    //    @State var selectDate: Date = Date.now
-    
-    //    assignment will happen inside init function
-    //    @State var selectBedTime = Date.now
-    //    @State var selectWakeTime = Date.now
-    //    @State var notes: String = ""
-
-//        if entryID exists, retrieve that entry
-
-//        else: set the entry to default values
-//    init(id: String?) {
-//
-//        if let id = entry?.id {
-//            let docRef = db.collection("entries").document(id)
-//
-//            docRef.getDocument { (document, error) in
-//                if let document = document, document.exists {
-//                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-//                    print("Document data: \(dataDescription)")
-//                } else {
-//                    print("Document does not exist")
-//                }
-//            }
-//        } else {
-//            self._selectDate = State(initialValue: Date())
-//            self._selectBedTime = State(initialValue: Date())
-//            self._selectWakeTime = State(initialValue: Date())
-//            self._notes = State(initialValue: "")
-//        }
-//    }
-        
+ 
             var body: some View {
                 
                 VStack {
@@ -125,13 +105,11 @@ struct EntryForm: View {
                     }
                     HStack {
                         Button {
-                            //                        fire off network call
-                            //                        How do I call updateEntry here?
-                            entryManager.addEntry(date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
-                            //                        Need some kind of attribute that represents an entry? look at that variable does it exist?
-                            //                        multiple conditionals, one in init then another one here
-                            //                        unwrap
-                            //
+                            if let existingEntry = entry {
+                                entryManager.updateEntry(toUpdate: existingEntry, date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
+                            } else {
+                                entryManager.addEntry(date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
+                            }
                         } label: {
                             Text("Save")
                                 .foregroundColor(.white)
@@ -147,10 +125,16 @@ struct EntryForm: View {
         }
         
         
-        struct EntryForm_Previews: PreviewProvider {
-            static var previews: some View {
-                EntryForm(selectDate: Date(), selectBedTime: Date(), selectWakeTime: Date(), notes: "NOTES")
-                    .environmentObject(EntryManager())
-            }
+struct EntryForm_Previews: PreviewProvider {
+    static var previews: some View {
+        let entry = Entry(date: Date(), sleepTime: Date(), wakeTime: Date(), notes: "Sample Notes")
+        return Group {
+            EntryForm(entry: entry)
+                .environmentObject(EntryManager())
+            
+            EntryForm() // Defaults with current time and date
+                .environmentObject(EntryManager())
         }
+    }
+}
 

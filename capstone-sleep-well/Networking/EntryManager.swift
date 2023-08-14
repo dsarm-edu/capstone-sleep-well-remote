@@ -12,7 +12,6 @@ import FirebaseFirestoreSwift
 
 class EntryManager: ObservableObject {
     @Published private(set) var entries: [Entry] = []
-    //    Publishes a list of entries that the UI can watch. Updates the list when data changes
     
     let db = Firestore.firestore()
     
@@ -21,16 +20,14 @@ class EntryManager: ObservableObject {
     }
     
     func getEntries() {
-        //        Set up snapshot listener
+
         db.collection("entries").addSnapshotListener { querySnapshot, error in
-            //        If there are no documents, exit function
+
             guard let documents = querySnapshot?.documents else {
                 print("Error fetching documents")
                 return
             }
             
-            //        If there are docs, map them from Firestore to the Entry model
-            //        If we run into error, print to console
             self.entries = documents.compactMap { document -> Entry? in
                 do {
                     return try document.data(as: Entry.self)
@@ -41,8 +38,7 @@ class EntryManager: ObservableObject {
             }
             print(self.entries)
             print(documents)
-            //        Sort entries by date with most recent date on top
-            //        Set the entries variable
+
             self.entries.sort(by: {
                 $0.date.compare($1.date) == .orderedDescending
             })
@@ -50,19 +46,16 @@ class EntryManager: ObservableObject {
     }
     
     func addEntry(date: Date, sleepTime: Date, wakeTime: Date, notes: String) {
-        //        If there is no entry, just return
+        
         guard !date.description.isEmpty else {
             return
         }
-        //    Create a new Entry instance with the date parameter, sleepTime parameter, wakeTime parameter, and notes parameter
+        
         let newEntry = Entry(
             date: date,
             sleepTime: sleepTime,
             wakeTime: wakeTime,
             notes: notes)
-        
-        //    Create a new document in Firestore with the newEntry variable above, and use setData(from:)
-        //    to convert the Entry into Firestore data.
         
         do {
             try db.collection("entries").document().setData(from: newEntry)
@@ -88,6 +81,7 @@ class EntryManager: ObservableObject {
     }
     
     func updateEntry(toUpdate: Entry, date: Date, sleepTime: Date, wakeTime: Date, notes: String) {
+        
         guard let entryID = toUpdate.id else {
             print("Error: Entry ID missing")
             return
