@@ -31,7 +31,7 @@ struct SleepEntriesView: View {
                 }
             }
         }
-        .offset(y: 15)
+        .offset(y: 10)
     }
 }
 

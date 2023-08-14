@@ -41,7 +41,7 @@ struct EntryForm: View {
             var body: some View {
                 
                 ZStack {
-                    Image("Background-Main")
+                    Image("Background-EntryForm")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .ignoresSafeArea()

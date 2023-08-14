@@ -40,6 +40,7 @@ struct HomeHeader: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 40.0, height: 40.0)
                     .padding(.trailing)
+                Spacer()
             }
             
             .navigationDestination(isPresented: $showEntries) {

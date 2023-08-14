@@ -41,6 +41,8 @@ struct SleepListHeader: View {
                     .frame(width: 35.0, height: 35.0)
                     .padding(.trailing)
                     .foregroundColor(.white)
+                
+                Spacer()
             }
             .navigationDestination(isPresented: $showEntryForm) {
                 EntryFormView(entryManager: EntryManager(), path: $path)
