@@ -21,23 +21,24 @@ struct EntryFormView: View {
             ScrollView {
                 VStack {
                     Spacer()
-                    HStack {
-                        Image("Moon-Icon")
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                    
-                        
-                        Image("SleepWell-Word-Icon")
-                            .resizable()
-                            .frame(width: 100, height: 25)
-                            .padding(.trailing)
-                        
-                        Spacer()
-                    }
-                    
+//                    HStack {
+//                        Image("Moon-Icon")
+//                            .resizable()
+//                            .frame(width: 150, height: 150)
+//
+//
+//                        Image("SleepWell-Word-Icon")
+//                            .resizable()
+//                            .frame(width: 100, height: 25)
+//                            .padding(.trailing)
+//
+//                        Spacer()
+//                    }
+//
                     EntryForm()
-//                    EntryList(path: $path)
                         .environmentObject(entryManager)
+                        .offset(y: -50)
+                    
                 }
                 .offset(y:25)
             }

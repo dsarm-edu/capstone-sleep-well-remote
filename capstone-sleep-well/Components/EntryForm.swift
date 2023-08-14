@@ -40,86 +40,92 @@ struct EntryForm: View {
  
             var body: some View {
                 
-                VStack {
-                    HStack {
-                        DatePicker("Please enter a time", selection: $selectDate, displayedComponents: .date)
-                            .labelsHidden()
-                            .datePickerStyle(.compact)
-                            .colorInvert()
-                        
-                        Spacer()
-                    }
-                    .frame(height: 35)
-                    .padding(.horizontal, 19)
-                    .padding(.vertical, 10)
-                    .background(Color("Light-Purple"))
-                    .padding(.horizontal, 35)
+                ZStack {
+                    Image("Background-Main")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .ignoresSafeArea()
                     
-                    HStack {
-                        Text("What time did you go to bed?")
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                        
-                        DatePicker("Please enter a time", selection: $selectBedTime, displayedComponents: .hourAndMinute)
-                            .labelsHidden()
-                            .datePickerStyle(.compact)
-                            .colorInvert()
-                    }
-                    .frame(height: 35)
-                    .padding(.horizontal, 19)
-                    .padding(.vertical, 10)
-                    .background(Color("Light-Purple"))
-                    .padding(.horizontal, 35)
-                    
-                    HStack {
-                        Text("What time did you wake up?")
-                            .foregroundColor(.white)
-                        
-                        Spacer()
-                        
-                        DatePicker("Please enter a time", selection: $selectWakeTime, displayedComponents: .hourAndMinute)
-                            .labelsHidden()
-                            .datePickerStyle(.compact)
-                            .colorInvert()
-                    }
-                    .frame(height: 35)
-                    .padding(.horizontal, 19)
-                    .padding(.vertical, 10)
-                    .background(Color("Light-Purple"))
-                    .padding(.horizontal, 35)
-                    
-                    HStack {
-                        SleepTimeCalculation()
-                    }
-                    
-                    HStack {
-                        
-                        TextField("", text: $notes)
-                            .foregroundColor(.white)
-                            .frame(height: 150)
-                            .padding(.horizontal, 19)
-                        //                    .padding(.vertical, 10)
-                            .background(Color("Light-Purple"))
-                            .padding(.horizontal, 35)
-                    }
-                    HStack {
-                        Button {
-                            if let existingEntry = entry {
-                                entryManager.updateEntry(toUpdate: existingEntry, date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
-                            } else {
-                                entryManager.addEntry(date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
-                            }
-                        } label: {
-                            Text("Save")
-                                .foregroundColor(.white)
-                                .frame(maxWidth: 80)
+                    VStack {
+                        HStack {
+                            DatePicker("Please enter a time", selection: $selectDate, displayedComponents: .date)
+                                .labelsHidden()
+                                .datePickerStyle(.compact)
+                                .colorInvert()
+                            
+                            Spacer()
                         }
+                        .frame(height: 35)
+                        .padding(.horizontal, 19)
+                        .padding(.vertical, 10)
+                        .background(Color("Light-Purple"))
+                        .padding(.horizontal, 35)
+                        
+                        HStack {
+                            Text("I went to bed at...")
+                                .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            DatePicker("Please enter a time", selection: $selectBedTime, displayedComponents: .hourAndMinute)
+                                .labelsHidden()
+                                .datePickerStyle(.compact)
+                                .colorInvert()
+                        }
+                        .frame(height: 35)
+                        .padding(.horizontal, 19)
+                        .padding(.vertical, 10)
+                        .background(Color("Light-Purple"))
+                        .padding(.horizontal, 35)
+                        
+                        HStack {
+                            Text("I woke up at...")
+                                .foregroundColor(.white)
+                            
+                            Spacer()
+                            
+                            DatePicker("Please enter a time", selection: $selectWakeTime, displayedComponents: .hourAndMinute)
+                                .labelsHidden()
+                                .datePickerStyle(.compact)
+                                .colorInvert()
+                        }
+                        .frame(height: 35)
+                        .padding(.horizontal, 19)
+                        .padding(.vertical, 10)
+                        .background(Color("Light-Purple"))
+                        .padding(.horizontal, 35)
+                        
+                        HStack {
+                            SleepTimeCalculation()
+                        }
+                        
+                        HStack {
+                            
+                            TextField("Notes", text: $notes)
+                                .foregroundColor(.white)
+                                .frame(height: 150)
+                                .padding(.horizontal, 19)
+                                .background(Color("Light-Purple"))
+                                .padding(.horizontal, 35)
+                        }
+                        HStack {
+                            Button {
+                                if let existingEntry = entry {
+                                    entryManager.updateEntry(toUpdate: existingEntry, date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
+                                } else {
+                                    entryManager.addEntry(date: selectDate, sleepTime: selectBedTime, wakeTime: selectWakeTime, notes: notes)
+                                }
+                            } label: {
+                                Text("Save")
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: 80)
+                            }
+                        }
+                        .padding(.horizontal, 19)
+                        .padding(.vertical, 10)
+                        .background(Color("Light-Purple"))
+                        .padding(.horizontal, 35)
                     }
-                    .padding(.horizontal, 19)
-                    .padding(.vertical, 10)
-                    .background(Color("Light-Purple"))
-                    .padding(.horizontal, 35)
                 }
             }
         }
@@ -127,12 +133,12 @@ struct EntryForm: View {
         
 struct EntryForm_Previews: PreviewProvider {
     static var previews: some View {
-        let entry = Entry(date: Date(), sleepTime: Date(), wakeTime: Date(), notes: "Sample Notes")
+        let entry = Entry(date: Date(), sleepTime: Date(), wakeTime: Date(), notes: "")
         return Group {
             EntryForm(entry: entry)
                 .environmentObject(EntryManager())
             
-            EntryForm() // Defaults with current time and date
+            EntryForm()
                 .environmentObject(EntryManager())
         }
     }
