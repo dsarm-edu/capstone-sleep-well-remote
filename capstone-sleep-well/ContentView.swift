@@ -31,7 +31,7 @@ struct ContentView: View {
                         .offset(y: -250)
                     
                     TimeQuery(time: time, path: $path)
-                        .offset(y: -80)
+                        .offset(x: 5, y: -80)
                 }
         )}
     }

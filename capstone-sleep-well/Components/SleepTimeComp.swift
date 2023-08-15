@@ -16,23 +16,27 @@ struct SleepTimeComp: View {
     
     var body: some View {
         VStack {
-            
-            Spacer()
-            Spacer()
             Spacer()
             Image("Text-WakeTimes2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            
+                .offset(y:80)
+            Spacer()
             VStack {
-                Spacer()
-                Spacer()
                 Spacer()
                 
                 Text(sleepTimeResults)
+                    .padding()
+                    .font(.title2)
                     .multilineTextAlignment(
                             .center)
-
+                    .frame(width: 250)
+                    .foregroundColor(.white)
+                    .background(Color("Light-Purple")
+                        .opacity(0.4))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.white, lineWidth: 3))
 //                Image("Block-6")
 //                    .resizable()
 //                    .aspectRatio(contentMode: .fit)
@@ -50,11 +54,8 @@ struct SleepTimeComp: View {
 //                    .resizable()
 //                    .aspectRatio(contentMode: .fit)
 //                    .frame(width: 350.0, height: 50.0)
-                Spacer()
-                Spacer()
             }
-            .foregroundColor(.white)
-            
+
             Image("Text-WakeTimes3")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -62,23 +63,23 @@ struct SleepTimeComp: View {
             Image("Text-Info1")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .offset(y:-50)
+                .offset(x: 5, y:-50)
 
             Image("Text-Info2")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .offset(y: -120)
-            
-            
         }
-//        .background(Color("Dark-Purple"))
-
     }
 }
 
 struct SleepTimeComp_Previews: PreviewProvider {
     static var previews: some View {
-        SleepTimeComp(sleepTimeResults: "sleeptimeresult sample")
+        SleepTimeComp(sleepTimeResults: """
+                        6 sleep cycles: 10:00 pm
+                        5 sleep cycles: 12:00 pm
+                        4 sleep cycles: 1:00 pm
+                        """)
             .environmentObject(Time())
             .background(Color("Dark-Purple"))
     }

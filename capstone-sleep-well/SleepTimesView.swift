@@ -9,10 +9,6 @@ import SwiftUI
 
 struct SleepTimesView: View {
     
-//    @StateObject var time: Time
-    
-    
-//    sleepTimeResults is not updating
     
     @EnvironmentObject var time: Time
     var sleepTimeResults: String
@@ -27,15 +23,20 @@ struct SleepTimesView: View {
 
             VStack {
                 SleepTimeComp(sleepTimeResults: sleepTimeResults)
+                    .offset(y: -60)
             }
-            .offset(y: 40)
+            .offset(y: 70)
         }
     }
 }
 
 struct SleepTimesView_Previews: PreviewProvider {
     static var previews: some View {
-        SleepTimesView(sleepTimeResults: "results")
+        SleepTimesView(sleepTimeResults: """
+                        6 sleep cycles: 10:00 pm
+                        5 sleep cycles: 12:00 pm
+                        4 sleep cycles: 1:00 pm
+                        """)
             .environmentObject(Time())
     }
 }

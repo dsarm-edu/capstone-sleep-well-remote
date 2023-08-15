@@ -40,7 +40,7 @@
 		50104CC22A74749F006D571B /* EntryFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFormView.swift; sourceTree = "<group>"; };
 		50104CC42A747B4B006D571B /* SleepTimeCalculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimeCalculation.swift; sourceTree = "<group>"; };
 		5022A8B32A7C0612009A6467 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		503BC5CF2A73106C002D8C33 /* EntryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryForm.swift; sourceTree = "<group>"; };
+		503BC5CF2A73106C002D8C33 /* EntryForm.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = EntryForm.swift; sourceTree = "<group>"; tabWidth = 4; };
 		503BC5D12A731F21002D8C33 /* TimeQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeQuery.swift; sourceTree = "<group>"; };
 		503BC5D32A732577002D8C33 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
 		503BC5D52A735FFB002D8C33 /* SleepTimesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepTimesView.swift; sourceTree = "<group>"; };

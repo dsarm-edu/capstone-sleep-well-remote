@@ -12,13 +12,7 @@ struct TimeQuery: View {
     @StateObject var time: Time
     
     @State var sleepTimeResults = ""
-    
-//    @ObservedObject var time: Time = Time()
-    
-    
-    
-//    @State var selectTime = Date()
-//    @State var wakeUpTime: Date?
+
     @Binding public var path: NavigationPath
     
     @State var showTimes: Bool = false
@@ -38,7 +32,7 @@ struct TimeQuery: View {
                 DatePicker("Please enter a time", selection: $time.selectTime, displayedComponents: .hourAndMinute)
                     .labelsHidden()
                     .datePickerStyle(.compact)
-                    .colorInvert()
+//                    .colorInvert()
                 
                 Spacer()
                 
@@ -50,7 +44,7 @@ struct TimeQuery: View {
                     Image("Button-Go")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width:120.0, height: 40.0)
+                        .frame(width:120.0, height: 35.0)
                 }
                 .navigationDestination(isPresented: $showTimes) {
                     SleepTimesView(sleepTimeResults: sleepTimeResults)
@@ -59,10 +53,6 @@ struct TimeQuery: View {
             }
         }
     }
-
-
-//        Print calculateSleepTimes function results to the SleepTimesView
-//        Put calculateSleepTimes results in a variable
 
 
     struct TimeQuery_Previews: PreviewProvider {
