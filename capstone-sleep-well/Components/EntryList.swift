@@ -10,9 +10,7 @@ import SwiftUI
 struct EntryList: View {
     @EnvironmentObject var entryManager: EntryManager
     @Binding var path: NavigationPath
-    
-//    pass in current entry for the row we're on
-    
+        
     var body: some View {
         ScrollView {
             ForEach(entryManager.entries, id: \.id) { entry in

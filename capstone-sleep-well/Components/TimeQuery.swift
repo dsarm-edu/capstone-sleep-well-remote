@@ -32,7 +32,6 @@ struct TimeQuery: View {
                 DatePicker("Please enter a time", selection: $time.selectTime, displayedComponents: .hourAndMinute)
                     .labelsHidden()
                     .datePickerStyle(.compact)
-//                    .colorInvert()
                 
                 Spacer()
                 

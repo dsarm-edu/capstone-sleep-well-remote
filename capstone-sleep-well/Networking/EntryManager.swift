@@ -99,6 +99,3 @@ class EntryManager: ObservableObject {
         }
     }
 }
-
-// update data - just pass in the entry id and specific fields we want to edit
-//what values are we setting it to?

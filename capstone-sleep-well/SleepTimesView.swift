@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SleepTimesView: View {
     
-    
     @EnvironmentObject var time: Time
     var sleepTimeResults: String
         

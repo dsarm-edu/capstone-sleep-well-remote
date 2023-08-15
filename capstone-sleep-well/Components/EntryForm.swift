@@ -51,10 +51,8 @@ struct EntryForm: View {
             VStack {
                 HStack {
                     DatePicker("Today's date:", selection: $selectDate, displayedComponents: .date)
-//                        .labelsHidden()
                         .datePickerStyle(.compact)
                         .foregroundColor(.white)
-//                        .colorInvert()
                     
                     Spacer()
                 }
@@ -74,7 +72,6 @@ struct EntryForm: View {
                     DatePicker("Please enter a time", selection: $selectBedTime, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                         .datePickerStyle(.compact)
-//                        .colorInvert()
                 }
                 .frame(height: 35)
                 .padding(.horizontal, 19)
@@ -91,7 +88,6 @@ struct EntryForm: View {
                     DatePicker("Please enter a time", selection: $selectWakeTime, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                         .datePickerStyle(.compact)
-//                        .colorInvert()
                 }
                 .frame(height: 35)
                 .padding(.horizontal, 19)
@@ -121,7 +117,6 @@ struct EntryForm: View {
                         Text("Save")
                             .foregroundColor(.white)
                             .frame(maxWidth: 80)
-                            
                     }
                 }
                 .padding(.horizontal, 19)
@@ -134,8 +129,7 @@ struct EntryForm: View {
             }
         }
     }
-    
-    
+
     
     struct EntryForm_Previews: PreviewProvider {
         static var previews: some View {

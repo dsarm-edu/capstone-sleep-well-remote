@@ -5,8 +5,6 @@
 //  Created by Danica Sarmiento on 8/2/23.
 //
 
-// Defines an Entry object that represents a network response
-
 import Foundation
 import FirebaseFirestoreSwift
 

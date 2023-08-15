@@ -13,7 +13,6 @@ struct SleepTimeComp: View {
     
     var sleepTimeResults: String
     
-    
     var body: some View {
         VStack {
             Spacer()
@@ -37,23 +36,6 @@ struct SleepTimeComp: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.white, lineWidth: 3))
-//                Image("Block-6")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 350.0, height: 50.0)
-//                Spacer()
-//
-//                Image("Block-5")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 350.0, height: 50.0)
-//
-//                Spacer()
-//
-//                Image("Block-4")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 350.0, height: 50.0)
             }
 
             Image("Text-WakeTimes3")
@@ -84,5 +66,3 @@ struct SleepTimeComp_Previews: PreviewProvider {
             .background(Color("Dark-Purple"))
     }
 }
-
-//sleepTimeResults: .constant("Sample sleepTimeResults")

@@ -87,5 +87,4 @@ class Time: ObservableObject {
         print("Time Slept: \(hoursSlept) hours, \(minutesSlept) minutes")
            
        }
-          
     }

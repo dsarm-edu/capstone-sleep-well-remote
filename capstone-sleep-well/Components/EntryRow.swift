@@ -24,7 +24,6 @@ struct EntryRow: View {
             Button {
                 showExistingEntry = true
                 print("Edit button pressed")
-//                entryManager.updateEntry(toUpdate: entry)
                 
             } label: {
                 Image(systemName: "pencil")

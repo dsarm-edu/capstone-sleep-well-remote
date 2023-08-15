@@ -54,7 +54,6 @@ struct HomeHeader: View {
     
     struct HomeHeader_Previews: PreviewProvider {
         static var previews: some View {
-//            HomeHeader()
             HomeHeader(path: .constant(NavigationPath()))
                 .background(Color("Dark-Purple"))
         }
